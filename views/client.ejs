@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="client.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/nolan/512/filled-chat.png">
+    <script src="https://kit.fontawesome.com/828c670315.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>WebSoc</title>
+</head>
+<body>
+    
+    <span class="titlebut">
+        <h1 id="cname"><%=clientName%></h1>
+        <!-- <input type="button" value="send hi" id="sender"> -->
+        <button id="sender" class="titbut">
+            <i class="fa-solid fa-thumbs-up"></i>
+        </button>
+        <button id="exits" class="titbut">
+            <i class="fa-solid fa-person-through-window"></i>
+        </button>
+
+    </span>
+
+    <span class="tb">
+        <ul id="msgs">
+            <% chats.forEach(element => { %>
+                <%if(element.name===clientName){%>
+                    <div>
+                <%}else{%>
+                    <div class="otherClient">
+                <%}%>
+                    <span><%=element.name%></span><%=element.text%>
+                </div>
+            <% }); %>
+        </ul>
+        <span class="typer">
+            <input type="text" name="text" id="msg" autocomplete="off" placeholder="Enter message">
+            <!-- <input type="button" value="send" id="sendmsg" > -->
+            <button id="sendmsg">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </span>
+    </span>
+
+    <script src="client.js"></script>
+</body>
+</html>
