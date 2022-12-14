@@ -1,7 +1,7 @@
 let nam = document.getElementById("cname").innerText;
 const listItem = document.getElementById("msgs");
 
-const socket = new WebSocket("ws://localhost:3000");
+const socket = new WebSocket("wss://wsstousecb.onrender.com");
 
 socket.addEventListener("open",(event)=>{
     socket.send(nam+"*&#@%");
