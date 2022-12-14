@@ -119,7 +119,7 @@ app.get("/admin/CleArchat",(req,res)=>{
   });
 });
 
-server.listen(3000,()=>console.log("ws on 3000"));
+server.listen(process.env.PORT,()=>console.log("ws on 3000"));
 
 app.listen(process.env.PORT,()=>{
   console.log("strtd");
